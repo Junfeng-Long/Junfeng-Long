@@ -10,6 +10,8 @@ jobs:
   github-metrics:
     runs-on: ubuntu-latest
     steps:
+      - name: Check if token is set
+        run: echo "Token length: ${#secrets.METRICS_TOKEN}"
       - uses: lowlighter/metrics@latest
         with:
           # Your GitHub token
